@@ -1,0 +1,85 @@
+<div class="card text-white bg-info m-4">
+  <div class="card-header">Reactive Forms</div>
+  <div class="card-body">
+    <form [formGroup]="formGroup">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName">Name</label>
+          <input type="text" class="form-control" id="inputName" formControlName="name" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.name.errors }"
+            placeholder="Enter Your Name">
+          <small id="nameHelp" class="form-text text-light">
+            Your name must contain both your first and last name
+          </small>
+          <div *ngIf="formSubmitClicked && formControl.name.errors" class="invalid-feedback">
+            <div *ngIf="formControl.name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail" formControlName="email" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.email.errors }"
+            placeholder="Enter Valid Email Address">
+          <small id="nameHelp" class="form-text text-light">
+            Your email must be valid to process your login details
+          </small>
+          <div *ngIf="formSubmitClicked && formControl.email.errors" class="invalid-feedback">
+            <div *ngIf="formControl.email.errors.required">Email is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" formControlName="address" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.address.errors }"
+          placeholder="Enter Your Address">
+        <small id="nameHelp" class="form-text text-light">
+          Your address must be complete
+        </small>
+        <div *ngIf="formSubmitClicked && formControl.address.errors" class="invalid-feedback">
+          <div *ngIf="formControl.address.errors.required">Address is required</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity" formControlName="city" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.city.errors }"
+            placeholder="Enter Your City">
+          <div *ngIf="formSubmitClicked && formControl.city.errors" class="invalid-feedback">
+            <div *ngIf="formControl.city.errors.required">City is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <select id="inputState" class="form-control" formControlName="state" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.state.errors }">
+            <option selected>Choose Your State</option>
+            <option>State1</option>
+            <option>State2</option>
+            <option>State3</option>
+            <option>State4</option>
+            <option>State5</option>
+          </select>
+          <div *ngIf="formSubmitClicked && formControl.state.errors" class="invalid-feedback">
+            <div *ngIf="formControl.state.errors.required">State is required</div>
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputPincode">Pincode</label>
+          <input type="text" class="form-control" id="inputPincode" formControlName="pincode" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.pincode.errors }">
+          <div *ngIf="formSubmitClicked && formControl.pincode.errors" class="invalid-feedback">
+            <div *ngIf="formControl.pincode.errors.required">Pincode is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="terms" [ngClass]="{ 'is-invalid': formSubmitClicked && formControl.terms.errors }">
+          <label class="form-check-label" for="gridCheck">
+            Add your Terms & Conditions to Agree
+          </label>
+          <div *ngIf="formSubmitClicked && formControl.terms.errors" class="invalid-feedback">
+            <div *ngIf="formControl.terms.errors.required">Please check the Terms & Conditions to submit</div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn submit-form text-white" (click)="submitForm()">Submit</button>
+    </form>
+  </div>
+</div>

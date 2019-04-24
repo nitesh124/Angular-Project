@@ -1,0 +1,23 @@
+<div class="card text-white bg-info m-4">
+  <div class="card-header">Test http methods with mock data</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <button type="button" class="btn btn-dark text-white" (click)="getData()">GET</button>
+        <div class="d-flex m-3" *ngFor="let data of mockData; let i = index">
+          <small class="col-4">{{mockData[i].name}}</small>
+          <small class="col-3">{{mockData[i].gender}}</small>
+          <small class="col-5">{{mockData[i].phone}}</small>
+        </div>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-dark text-white" (click)="insertData(name.value,gender.value,phone.value)">POST</button>
+        <div class="m-2">
+          <input type="text" class="form-control" id="inputName" placeholder="Enter name" #name>
+          <input type="text" class="form-control" id="inputGender" placeholder="Enter gender" #gender>
+          <input type="text" class="form-control" id="inputPhone" placeholder="Enter phone number" #phone>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

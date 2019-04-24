@@ -1,0 +1,33 @@
+.grid {
+  padding: 30px;
+}
+
+.grid-item {
+  background-image: linear-gradient(141deg, #9fb8ad -5%, #1fc8db 50%, #2cb5e8 100%);
+  height: 200px;
+  width: 100px;
+  margin: 5px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.grid-item-title {
+  justify-content: center
+}
+
+.grid-item-icon {
+  width: 90px;
+}
+
+.link {
+  color: white;
+}
+
+.grid-row {
+  margin-left: -90px;
+  margin-right: -90px;
+}
